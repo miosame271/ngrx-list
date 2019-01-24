@@ -1,0 +1,15 @@
+.user-list {
+  max-width: 480px;
+
+  .mat-list-item:not(:first-child) {
+    border-top: 1px solid #dadada;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.add-button {
+  margin: 24px 16px 0;
+}

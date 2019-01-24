@@ -1,0 +1,31 @@
+<mat-list class="user-list">
+  <mat-list-item *ngFor="let user of userList">
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="full-width">
+      {{user.login}}, id = {{user.id}}
+      <div class="button-container">
+        <button
+          mat-icon-button
+          routerLink="/edit/{{user.id}}">
+          <mat-icon aria-label="edit">
+            edit
+          </mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          (click)="remove(user)">
+          <mat-icon aria-label="edit">
+            delete
+          </mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-list-item>
+  <div class="add-button">
+    <button
+      mat-flat-button
+      color="primary"
+      routerLink="/add">
+      Add
+    </button>
+  </div>
+</mat-list>

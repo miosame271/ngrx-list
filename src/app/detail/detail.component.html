@@ -1,0 +1,60 @@
+<form #form=ngForm class="user-form">
+  <ng-container *ngIf="user; else empty">
+    <p>
+      <mat-form-field>
+        <input
+          [(ngModel)]="user.login"
+          type="text"
+          matInput
+          placeholder="Login"
+          name="login"
+          required>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <input
+          [(ngModel)]="user.name"
+          type="text"
+          matInput
+          placeholder="Name"
+          name="name"
+          required>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field>
+        <input
+          [(ngModel)]="user.email"
+          type="text"
+          matInput
+          placeholder="E-mail"
+          name="mail"
+          required>
+      </mat-form-field>
+    </p>
+  </ng-container>
+  <div class="button-container">
+    <button
+      *ngIf="user"
+      class="submit-button"
+      mat-flat-button
+      color="primary"
+      [disabled]="form.invalid"
+      (click)="submit()"
+      routerLink="/list">
+      Save
+    </button>
+    <button
+      mat-stroked-button
+      routerLink="/list">
+      Back
+    </button>
+  </div>
+</form>
+
+<ng-template #empty>
+  <p>
+    User not found.
+  </p>
+</ng-template>
